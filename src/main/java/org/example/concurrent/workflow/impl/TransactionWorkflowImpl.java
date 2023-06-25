@@ -1,7 +1,7 @@
 package org.example.concurrent.workflow.impl;
 
 import java.util.concurrent.Future;
-import org.example.concurrent.workflow.TransactionHandler;
+import org.example.concurrent.workflow.TransactionWorkflow;
 import org.example.concurrent.workflow.concurrency.TransactionExecutor;
 import org.example.concurrent.services.TransactionService;
 import org.example.concurrent.data.CombinedPreHandleResult;
@@ -9,13 +9,13 @@ import org.example.concurrent.data.PreHandleResult;
 import org.example.concurrent.data.Transaction;
 import org.example.concurrent.data.TransactionResult;
 
-public class TransactionHandlerImpl implements TransactionHandler {
+public class TransactionWorkflowImpl implements TransactionWorkflow {
 
     private final TransactionExecutor executor;
 
     private final TransactionService transactionService;
 
-    public TransactionHandlerImpl(TransactionService transactionService, TransactionExecutor executor) {
+    public TransactionWorkflowImpl(TransactionService transactionService, TransactionExecutor executor) {
         this.transactionService = transactionService;
         this.executor = executor;
     }
