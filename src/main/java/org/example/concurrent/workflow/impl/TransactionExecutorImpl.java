@@ -27,35 +27,6 @@ public class TransactionExecutorImpl implements TransactionExecutor {
         handleExecutor = resourceManager.createSingleThreadExecutor();
     }
 
-    @Override
-    public Future<PreHandleResult> preHandleCheckAccount(Transaction t) {
-        return preHandleCustomTask((transaction) -> {
-            if(transaction.getAccount() == null) {
-                return new PreHandleResult(true);
-            }
-            return new PreHandleResult(false);
-        }, t);
-    }
-
-    @Override
-    public Future<PreHandleResult> preHandleCheckValidAmount(Transaction t) {
-        return preHandleCustomTask((transaction) -> {
-            if(transaction.getAmount() > 0) {
-                return new PreHandleResult(true);
-            }
-            return new PreHandleResult(false);
-        }, t);
-    }
-
-    @Override
-    public Future<PreHandleResult> preHandleCheckHash(Transaction t) {
-        return preHandleCustomTask((transaction) -> {
-            if(transaction.getHash() == null) {
-                return new PreHandleResult(true);
-            }
-            return new PreHandleResult(false);
-        }, t);
-    }
 
     @Override
     public Future<PreHandleResult> preHandleCustomTask(Function<Transaction, PreHandleResult> task, Transaction t) {
@@ -85,36 +56,6 @@ public class TransactionExecutorImpl implements TransactionExecutor {
             }
             return new CombinedPreHandleResult(false);
         }, preHandleExecutor);
-    }
-
-    @Override
-    public Future<TransactionResult> handle(Future<CombinedPreHandleResult> preHandleTask, Transaction t) {
-        if (preHandleTask instanceof CompletableFuture<CombinedPreHandleResult> cf) {
-            return cf.handleAsync((result, exception) -> {
-                if (exception != null) {
-                    return new TransactionResult(true);
-                }
-                if(!result.fail()) {
-                    return new TransactionResult(true);
-                }
-                return new TransactionResult(false);
-            }, handleExecutor);
-        }
-        return CompletableFuture.supplyAsync(() -> {
-            try {
-                return preHandleTask.get();
-            } catch (Exception e) {
-                return new CombinedPreHandleResult(true);
-            }
-        }, preHandleExecutor).handleAsync((result, exception) -> {
-            if (exception != null) {
-                return new TransactionResult(true);
-            }
-            if(!result.fail()) {
-                return new TransactionResult(true);
-            }
-            return new TransactionResult(false);
-        }, handleExecutor);
     }
 
     @Override
