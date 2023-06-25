@@ -1,9 +1,9 @@
-package org.example.concurrent.impl;
+package org.example.concurrent.workflow.impl;
 
 import java.util.concurrent.Future;
-import org.example.concurrent.api.TransactionExecutor;
-import org.example.concurrent.api.TransactionHandler;
-import org.example.concurrent.api.TransactionService;
+import org.example.concurrent.workflow.TransactionHandler;
+import org.example.concurrent.workflow.concurrency.TransactionExecutor;
+import org.example.concurrent.services.TransactionService;
 import org.example.concurrent.data.CombinedPreHandleResult;
 import org.example.concurrent.data.PreHandleResult;
 import org.example.concurrent.data.Transaction;

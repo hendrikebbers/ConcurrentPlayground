@@ -1,4 +1,4 @@
-package org.example.concurrent.impl;
+package org.example.concurrent.workflow.impl;
 
 import java.util.Arrays;
 import java.util.concurrent.CompletableFuture;
@@ -6,8 +6,8 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Future;
 import java.util.function.Function;
 import java.util.function.Supplier;
-import org.example.concurrent.api.ResourceManager;
-import org.example.concurrent.api.TransactionExecutor;
+import org.example.concurrent.base.ResourceManager;
+import org.example.concurrent.workflow.concurrency.TransactionExecutor;
 import org.example.concurrent.data.CombinedPreHandleResult;
 import org.example.concurrent.data.PreHandleResult;
 import org.example.concurrent.data.Transaction;

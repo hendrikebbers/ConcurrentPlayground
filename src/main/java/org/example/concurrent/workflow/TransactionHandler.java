@@ -1,4 +1,4 @@
-package org.example.concurrent.api;
+package org.example.concurrent.workflow;
 
 import java.util.concurrent.Future;
 import org.example.concurrent.data.Transaction;

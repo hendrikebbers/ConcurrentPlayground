@@ -1,4 +1,4 @@
-package org.example.concurrent.api;
+package org.example.concurrent.workflow.concurrency;
 
 import java.util.concurrent.Future;
 import java.util.function.BiFunction;

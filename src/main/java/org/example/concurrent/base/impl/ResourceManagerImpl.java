@@ -1,8 +1,8 @@
-package org.example.concurrent.impl;
+package org.example.concurrent.base.impl;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
-import org.example.concurrent.api.ResourceManager;
+import org.example.concurrent.base.ResourceManager;
 
 public class ResourceManagerImpl implements ResourceManager {
 

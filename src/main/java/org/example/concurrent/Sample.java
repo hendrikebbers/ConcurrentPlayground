@@ -1,15 +1,15 @@
 package org.example.concurrent;
 
 import java.util.Random;
-import org.example.concurrent.api.ResourceManager;
-import org.example.concurrent.api.TransactionExecutor;
-import org.example.concurrent.api.TransactionHandler;
-import org.example.concurrent.api.TransactionService;
+import org.example.concurrent.base.ResourceManager;
+import org.example.concurrent.workflow.concurrency.TransactionExecutor;
+import org.example.concurrent.workflow.TransactionHandler;
+import org.example.concurrent.services.TransactionService;
 import org.example.concurrent.data.Transaction;
-import org.example.concurrent.impl.ResourceManagerImpl;
-import org.example.concurrent.impl.TransactionExecutorImpl;
-import org.example.concurrent.impl.TransactionHandlerImpl;
-import org.example.concurrent.impl.TransactionServiceImpl;
+import org.example.concurrent.base.impl.ResourceManagerImpl;
+import org.example.concurrent.workflow.impl.TransactionExecutorImpl;
+import org.example.concurrent.workflow.impl.TransactionHandlerImpl;
+import org.example.concurrent.services.impl.TransactionServiceImpl;
 
 public class Sample {
 
