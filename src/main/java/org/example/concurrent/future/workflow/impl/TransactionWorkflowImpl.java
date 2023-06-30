@@ -1,13 +1,13 @@
-package org.example.concurrent.workflow.impl;
+package org.example.concurrent.future.workflow.impl;
 
 import java.util.concurrent.Future;
-import org.example.concurrent.workflow.TransactionWorkflow;
-import org.example.concurrent.workflow.concurrency.TransactionExecutor;
-import org.example.concurrent.services.TransactionService;
-import org.example.concurrent.data.CombinedPreHandleResult;
-import org.example.concurrent.data.PreHandleResult;
-import org.example.concurrent.data.Transaction;
-import org.example.concurrent.data.TransactionResult;
+import org.example.concurrent.future.workflow.TransactionWorkflow;
+import org.example.concurrent.future.workflow.concurrency.TransactionExecutor;
+import org.example.concurrent.future.services.TransactionService;
+import org.example.concurrent.future.data.CombinedPreHandleResult;
+import org.example.concurrent.future.data.PreHandleResult;
+import org.example.concurrent.future.data.Transaction;
+import org.example.concurrent.future.data.TransactionResult;
 
 public class TransactionWorkflowImpl implements TransactionWorkflow {
 

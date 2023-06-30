@@ -1,15 +1,15 @@
-package org.example.concurrent;
+package org.example.concurrent.future;
 
 import java.util.Random;
 import org.example.concurrent.base.ResourceManager;
-import org.example.concurrent.workflow.concurrency.TransactionExecutor;
-import org.example.concurrent.workflow.TransactionWorkflow;
-import org.example.concurrent.services.TransactionService;
-import org.example.concurrent.data.Transaction;
+import org.example.concurrent.future.workflow.concurrency.TransactionExecutor;
+import org.example.concurrent.future.workflow.TransactionWorkflow;
+import org.example.concurrent.future.services.TransactionService;
+import org.example.concurrent.future.data.Transaction;
 import org.example.concurrent.base.impl.ResourceManagerImpl;
-import org.example.concurrent.workflow.impl.TransactionExecutorImpl;
-import org.example.concurrent.workflow.impl.TransactionWorkflowImpl;
-import org.example.concurrent.services.impl.TransactionServiceImpl;
+import org.example.concurrent.future.workflow.impl.TransactionExecutorImpl;
+import org.example.concurrent.future.workflow.impl.TransactionWorkflowImpl;
+import org.example.concurrent.future.services.impl.TransactionServiceImpl;
 
 public class Sample {
 
@@ -27,6 +27,5 @@ public class Sample {
             Thread.sleep(random.nextLong(200));
             workflow.onTransaction(new Transaction());
         }
-
     }
 }

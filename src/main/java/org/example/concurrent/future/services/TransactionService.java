@@ -1,8 +1,8 @@
-package org.example.concurrent.services;
+package org.example.concurrent.future.services;
 
-import org.example.concurrent.data.PreHandleResult;
-import org.example.concurrent.data.Transaction;
-import org.example.concurrent.data.TransactionResult;
+import org.example.concurrent.future.data.PreHandleResult;
+import org.example.concurrent.future.data.Transaction;
+import org.example.concurrent.future.data.TransactionResult;
 
 public interface TransactionService {
 

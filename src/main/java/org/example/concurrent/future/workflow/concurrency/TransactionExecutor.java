@@ -1,13 +1,11 @@
-package org.example.concurrent.workflow.concurrency;
+package org.example.concurrent.future.workflow.concurrency;
 
 import java.util.concurrent.Future;
-import java.util.function.BiFunction;
 import java.util.function.Function;
-import java.util.function.Supplier;
-import org.example.concurrent.data.CombinedPreHandleResult;
-import org.example.concurrent.data.PreHandleResult;
-import org.example.concurrent.data.Transaction;
-import org.example.concurrent.data.TransactionResult;
+import org.example.concurrent.future.data.CombinedPreHandleResult;
+import org.example.concurrent.future.data.PreHandleResult;
+import org.example.concurrent.future.data.Transaction;
+import org.example.concurrent.future.data.TransactionResult;
 
 public interface TransactionExecutor {
 
