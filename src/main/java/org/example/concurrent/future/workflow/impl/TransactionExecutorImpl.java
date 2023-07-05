@@ -23,8 +23,8 @@ public class TransactionExecutorImpl implements TransactionExecutor {
 
     public TransactionExecutorImpl(ResourceManager resourceManager) {
         this.resourceManager = resourceManager;
-        preHandleExecutor = resourceManager.createPooledExecutor();
-        handleExecutor = resourceManager.createSingleThreadExecutor();
+        preHandleExecutor = resourceManager.getOrCreateExecutor("preHandleExecutor");
+        handleExecutor = resourceManager.getOrCreateExecutor("handleExecutor");
     }
 
 
